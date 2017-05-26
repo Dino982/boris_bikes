@@ -9,13 +9,24 @@ class DockingStation
   end
 
   def release_bike #nb methods can release other objects...like a new instance of bike
-    fail 'No bikes available' if @bikes.empty?
+    fail 'No bikes available' if empty?
     @bikes.pop
   end
 
   def dock(bike)
-    fail 'Docking station full' if @bikes.count >= 20
+    fail 'Docking station full' if full?
     @bikes << bike
+  end
+
+
+  private
+
+  def empty?
+    @bikes.empty?
+  end
+
+  def full?
+    @bikes.count >= 20
   end
 
 end

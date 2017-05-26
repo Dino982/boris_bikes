@@ -25,7 +25,6 @@ class DockingStation
 
   private
 
-
   def empty?
     bikes.empty?
   end
